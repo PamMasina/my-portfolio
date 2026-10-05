@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andile Pamela Masina | Portfolio</title>
+<meta name="description" content="Portfolio of Andile Pamela Masina, final year ICT student at CPUT and Data Analytics Intern with the Data Academy at Capaciti.">
+<meta property="og:title" content="Andile Pamela Masina | Portfolio">
+<meta property="og:description" content="Portfolio of Andile Pamela Masina, final year ICT student at CPUT and Data Analytics Intern with the Data Academy at Capaciti.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c8cff'/><text x='50' y='50' font-family='sans-serif' font-size='58' font-weight='700' fill='%230b0d12' text-anchor='middle' dominant-baseline='central'>A</text></svg>">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span class="brand-text" data-bind="profile.shortName">APM</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M19.8 4.2l-2.1 2.1M6.3 17.7l-2.1 2.1"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 1 1 9.4 3.5a6.8 6.8 0 0 0 11.1 11.1Z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-bind="profile.availability">Seeking graduate roles</span></p>
+      <h1 class="reveal">
+        <span class="hero-hi">Hi, I'm</span>
+        <span class="hero-name" data-bind="profile.name">Andile Pamela Masina</span>
+      </h1>
+      <p class="hero-role reveal"><span data-bind="profile.role">Data Analytics Intern</span></p>
+      <p class="hero-tagline reveal" data-bind="profile.tagline">Final year ICT student at CPUT, currently interning with the Data Academy at Capaciti and turning numbers into answers.</p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#projects">View my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <ul class="social-row reveal" data-render="socials" aria-label="Social links"></ul>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>About me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal" data-render="about"></div>
+        <aside class="about-facts reveal" aria-label="Quick facts">
+          <h3 class="card-title">At a glance</h3>
+          <div data-render="facts"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Skills &amp; tech</h2>
+        <p class="section-sub">What I'm learning and building with.</p>
+      </div>
+      <div class="skills-grid" data-render="skills"></div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Projects</h2>
+        <p class="section-sub">A selection of things I've built.</p>
+      </div>
+      <div class="projects-grid" data-render="projects"></div>
+    </div>
+  </section>
+
+  <section class="section section-contact" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Contact</h2>
+        <p class="section-sub">Have a project in mind? Let's talk.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <p class="error" data-error-for="message"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-side reveal">
+          <p class="contact-lead">Prefer email? I'm quickest there.</p>
+          <button class="email-chip" type="button" id="copy-email" data-bind="profile.email">masinaa55@gmail.com</button>
+          <p class="copy-hint" id="copy-hint" role="status" aria-live="polite"></p>
+          <ul class="social-list" data-render="socials-list" aria-label="Other links"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> <span data-bind="profile.name">Andile Pamela Masina</span>. All rights reserved.</p>
+    <a href="#top" class="to-top">Back to top <span aria-hidden="true">&uarr;</span></a>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
