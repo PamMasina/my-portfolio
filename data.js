@@ -7,7 +7,8 @@ const PORTFOLIO = {
     availability: "Seeking graduate roles",
     email: "masinaa55@gmail.com",
     location: "South Africa",
-    resumeUrl: "Andile-Masina-Resume.pdf",
+    photoUrl: "",                    // e.g. "images/profile.jpg" — leave "" to hide the photo
+    resumeUrl: "andile-masina-resume.pdf",
     resumeLabel: "Download CV"
   },
 
@@ -65,7 +66,16 @@ const PORTFOLIO = {
       tech: ["Expo", "React Native", "TypeScript", "Supabase", "NativeWind"],
       liveUrl: "https://handyhub-mobile.vercel.app",
       repoUrl: "https://github.com/PamMasina/handyhub-mobile",
-      featured: true
+      featured: true,
+      // CASE STUDY - edit these, or delete this whole block. Add more objects for more scenarios.
+      scenarios: [
+        {
+          scenario: "A homeowner in a new suburb needs a plumber but has no trusted contacts.",
+          problem: "Word-of-mouth is slow and there is no way to see who is available or vetted.",
+          approach: "Built a cross-platform marketplace with worker profiles, Supabase auth and real-time chat so clients and workers can agree on a job in one thread.",
+          outcome: "Clients can find and message a nearby skilled worker in minutes, on web, Android or iOS."
+        }
+      ]
     },
     {
       title: "Netflix Content Analysis Dashboard",

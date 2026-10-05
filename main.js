@@ -32,6 +32,17 @@ function bind() {
   });
 }
 
+function renderHeroPhoto() {
+  const box = document.querySelector('[data-render="hero-photo"]');
+  if (!box) return;
+  const img = box.querySelector("img");
+  const url = PORTFOLIO.profile.photoUrl;
+  if (!url || !img) return;
+  img.src = url;
+  img.addEventListener("error", () => { box.hidden = true; }, { once: true });
+  box.hidden = false;
+}
+
 function renderSocials() {
   const list = document.querySelector('[data-render="socials"]');
   if (!list) return;
@@ -97,6 +108,23 @@ function renderProjects() {
       p.repoUrl ? `<a class="project-link" href="${esc(p.repoUrl)}" target="_blank" rel="noopener noreferrer">${svg(STROKE_ICONS.code)} Code</a>` : ""
     ].filter(Boolean).join("");
 
+    const cases = Array.isArray(p.scenarios) ? p.scenarios : [];
+    const caseStudy = cases.length ? `
+          <details class="case-study">
+            <summary>${svg(STROKE_ICONS.link)} Case study</summary>
+            <div class="case-body">
+              ${cases.map((c) => `
+                <div class="case-item">
+                  <p class="case-scenario">${esc(c.scenario)}</p>
+                  <dl class="case-facts">
+                    ${c.problem ? `<div><dt>Problem</dt><dd>${esc(c.problem)}</dd></div>` : ""}
+                    ${c.approach ? `<div><dt>Approach</dt><dd>${esc(c.approach)}</dd></div>` : ""}
+                    ${c.outcome ? `<div><dt>Outcome</dt><dd>${esc(c.outcome)}</dd></div>` : ""}
+                  </dl>
+                </div>`).join("")}
+            </div>
+          </details>` : "";
+
     return `
       <article class="project-card">
         <div class="project-media">
@@ -109,6 +137,7 @@ function renderProjects() {
           <ul class="tag-list">
             ${p.tech.map((t) => `<li class="tag">${esc(t)}</li>`).join("")}
           </ul>
+          ${caseStudy}
           ${links ? `<div class="project-links">${links}</div>` : ""}
         </div>
       </article>`;
@@ -285,6 +314,7 @@ function setupForm() {
 
 function render() {
   bind();
+  renderHeroPhoto();
   renderSocials();
   renderAbout();
   renderSkills();

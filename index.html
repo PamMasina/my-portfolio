@@ -48,20 +48,28 @@
 
   <section class="hero">
     <div class="container">
-      <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-bind="profile.availability">Seeking graduate roles</span></p>
-      <h1 class="reveal">
-        <span class="hero-hi">Hi, I'm</span>
-        <span class="hero-name" data-bind="profile.name">Andile Pamela Masina</span>
-      </h1>
-      <p class="hero-role reveal"><span data-bind="profile.role">Data Analytics Intern</span></p>
-      <p class="hero-tagline reveal" data-bind="profile.tagline">Final year ICT student at CPUT, currently interning with the Data Academy at Capaciti and turning numbers into answers.</p>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-bind="profile.availability">Seeking graduate roles</span></p>
+          <h1 class="reveal">
+            <span class="hero-hi">Hi, I'm</span>
+            <span class="hero-name" data-bind="profile.name">Andile Pamela Masina</span>
+          </h1>
+          <p class="hero-role reveal"><span data-bind="profile.role">Data Analytics Intern</span></p>
+          <p class="hero-tagline reveal" data-bind="profile.tagline">Final year ICT student at CPUT, currently interning with the Data Academy at Capaciti and turning numbers into answers.</p>
 
-      <div class="hero-cta reveal">
-        <a class="btn btn-primary" href="#projects">View my work</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <div class="hero-cta reveal">
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+
+          <ul class="social-row reveal" data-render="socials" aria-label="Social links"></ul>
+        </div>
+
+        <div class="hero-photo reveal" data-render="hero-photo" hidden>
+          <img data-bind-src="profile.photoUrl" alt="Portrait of Andile Pamela Masina">
+        </div>
       </div>
-
-      <ul class="social-row reveal" data-render="socials" aria-label="Social links"></ul>
     </div>
   </section>
 

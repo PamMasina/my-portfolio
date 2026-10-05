@@ -44,6 +44,16 @@ resumeLabel: "Download CV"
 `resumeUrl` adds a "Download CV" button to the hero. Leave it as `""` and the
 button stays hidden.
 
+### 1b. Your photo
+
+```js
+photoUrl: "images/profile.jpg",   // "" hides the photo entirely
+```
+
+Put your photo in the `images/` folder and point `photoUrl` at it. It shows in
+the hero, next to your intro, in a 4:5 portrait frame. Use a roughly portrait
+image (e.g. 800x1000). If the image is missing it hides itself automatically.
+
 ### 2. `about` — the About me text
 
 An array of paragraphs. One string = one paragraph. Add or remove items freely.
@@ -93,6 +103,26 @@ skills: [
 
 To use screenshots, put them in an `images/` folder next to `index.html` and
 reference them as `images/your-file.jpg`.
+
+### 5b. Case studies (scenarios)
+
+Each project can carry one or more written scenarios that appear in a folded
+"Case study" panel under the description. Add a `scenarios` array:
+
+```js
+scenarios: [
+  {
+    scenario: "One line setting the scene — who needs what.",
+    problem: "The problem that existed before you built it.",
+    approach: "What you built and the key decisions you made.",
+    outcome: "What changed as a result."
+  }
+]
+```
+
+Every field except nothing is required — omit `problem`, `approach` or `outcome`
+and that row just won't render. Delete the whole `scenarios` array to hide the
+panel. Add several objects to a project to list several scenarios.
 
 ### 6. `socials` — links in the hero and Contact section
 
